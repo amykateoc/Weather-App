@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/style.css">
+</head>
+  
+ <header>
+  <h1 class="siteTitle">Weather Dashboard</h1>
+ </header>
+
+<body>
+<nav class="navEl">
+  <div class="seachdiv">
+    <h2>Search for a city:</h2>
+    <input class="inputEl"></input>
+    <button class="searchEl" href="#">
+    Search</button>
+  </div>
+
+<!-- <div class="navbarEl">
+    <div class="cityEl">
+      <button class="newYorkEl" href="#">
+        New York
+      </button>
+    </div>
+      <div class="cityEl">
+        <button class="losAngelesEl" href="#">
+          Los Angeles
+        </button>
+      </div>
+        <div class="cityEl">
+          <button class="atlantaEl" href="#">
+            Atlanta
+          </button>
+        </div>
+          <div class="cityEl">
+            <button class="denverEl" href="#">
+              Denver
+            </button>
+          </div>
+            <div class="cityEl">
+              <button class="seattleEl" href="#">
+                Seattle
+              </button>
+            </div>
+              <div class="cityEl">
+                <button class="chicagoEl" href="#">
+                  Chicago
+                </button>
+              </div>
+                <div class="cityEl">
+                  <button class="tampaEl" id= 'tampa' href="#">
+                    Tampa
+                  </button>     
+                  </div>           -->
+</nav>
+
+<card>
+  <h1 id="cityName"></h1>
+  <div>
+    <h2 id="Ctitle"></h2>
+    <img id="iconEl">
+    <p id="currentDay"></p>
+    <h3 id="tempEl"></h3>
+  </div>
+</card>
+<div>
+  <h2 id="Ftitle"></h2>
+   <card>
+    <h3 id="dayOne"></h3>
+   </card>
+   <card>
+    <h3 id="dayTwo"></h3>
+   </card>
+   <card>
+    <h3 id="dayThree"></h3>
+   </card>
+   <card>
+    <h3 id="dayFour"></h3>
+   </card>
+   <card>
+    <h3 id="dayFive"></h3>
+   </card>
+  </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+crossorigin="anonymous"></script>
+<script
+  src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
+  integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw="
+  crossorigin="anonymous"></script>
+    <script src="./assets/script.js"></script>
+
