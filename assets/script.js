@@ -21,13 +21,17 @@ var today = dayjs();
 var todaysDate = document.getElementById('currentDay');
 
 var weatherIcon = document.getElementById('iconEl');
+var historyContainer = document.getElementById('cityHistory')
+
+
+var citySearch = []
 
 
 function getWeather() {
     getCurrentWeather();
     getForecast();
+    // appendToLocalStorage()
 }
-
 
 function getCurrentWeather() {
     var city = document.querySelector('.inputEl').value;
@@ -40,6 +44,7 @@ function getCurrentWeather() {
     .then(function (data) {
         console.log(data)
         // console.log(data.city.name);
+        appendToLocalStorage();
         CityNameEl.textContent = "City Name: " + data.name;
         currentWeatherTitle.textContent = "Current Conditions";
         todaysDate.textContent = today;
@@ -61,6 +66,35 @@ function getCurrentWeather() {
         }
     })
 };
+
+
+function renderCitySearch() {
+    historyContainer.textContent = ""
+    for (var i=0; i<citySearch.length; i++) {
+        var btn = document.createElement('button')
+        btn.setAttribute('type', 'button')
+        btn.classList.add('history-btn', 'btn-history')
+        btn.setAttribute('data-search', citySearch[i]);
+        btn.textContent = citySearch[i]
+        historyContainer.append(btn)
+    }
+}
+
+function appendToLocalStorage() {
+    var search = document.querySelector('.inputEl').value;
+    citySearch.push(search)
+    localStorage.setItem('search-history', JSON.stringify(citySearch))
+    renderCitySearch();
+}
+
+function getFromLocalStorage() {
+    var storedCities = localStorage.getItem('search-history')
+    if (storedCities) {
+        citySearch = JSON.parse('storedCities')
+    }
+    renderCitySearch();
+}
+
 
 
 
@@ -102,6 +136,8 @@ var searchBtn = document.querySelector('.searchEl');
 searchBtn.addEventListener('click', getWeather);
 
 
+
 //TO DO: Replace api keys in link when fetching certain cities
 //TO DO: use geocoder api to convert city names to coordinates to be used in weather api
 //TO DO: add event listeners to each preset city button with proper coordinates
+
